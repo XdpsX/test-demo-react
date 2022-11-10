@@ -2,6 +2,7 @@
 // function component
 
 import React from "react";
+import DisplayInfor from "./DisplayInfor";
 import UserInfor from "./UserInfor";
 
 class MyComponent extends React.Component {
@@ -39,6 +40,11 @@ class MyComponent extends React.Component {
         {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
         {/* <button onClick={this.handleClick}>Click me</button> */}
         <UserInfor></UserInfor>
+        <br/>
+        <br/>
+        <DisplayInfor name="Hoi Dan IT" age="30"></DisplayInfor>
+        <hr/>
+        <DisplayInfor name="IT" age={26}></DisplayInfor>
       </div>
     )
   }
