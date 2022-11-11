@@ -53,14 +53,17 @@ class MyComponent extends React.Component {
   render() {
     // JSX: chi tra ve 1 phan tu parent
     return (
-      <div>
-        {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
-        {/* <button onClick={this.handleClick}>Click me</button> */}
-        <AddUserInfor handleAddNewUser={this.handleAddNewUser}></AddUserInfor>
-        <br />
-        <br />
-        <DisplayInfor listUsers={this.state.listUsers} />
-      </div>
+      <>
+        <div className="a">
+          {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
+          {/* <button onClick={this.handleClick}>Click me</button> */}
+          <AddUserInfor handleAddNewUser={this.handleAddNewUser}></AddUserInfor>
+          <br />
+          <br />
+          <DisplayInfor listUsers={this.state.listUsers} />
+        </div>
+        <div className="b"></div>
+      </>
     );
   }
 }
