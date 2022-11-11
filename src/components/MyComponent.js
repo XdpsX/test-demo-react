@@ -6,12 +6,18 @@ import DisplayInfor from "./DisplayInfor";
 import UserInfor from "./UserInfor";
 
 class MyComponent extends React.Component {
+  state = {
+    listUsers: [
+      { id: 1, name: "Hoi Dan IT", age: "30" },
+      { id: 2, name: "Eric", age: "26" },
+      { id: 3, name: "HaryPhamDev", age: "31" },
+    ],
+  };
 
-  
   // handleClick(event){
   //   console.log("Clicked button");
   //   console.log("My name is ", this.state.name);
-  
+
   //   // merge State (react class)
   //   this.setState({
   //     name: "Hary",
@@ -28,25 +34,22 @@ class MyComponent extends React.Component {
   //   // console.log(event);
   //   console.log("My name is ", this.state.name);
   // }
-  handleOnMouseOver(event){
+  handleOnMouseOver(event) {
     console.log(event.pageX);
   }
 
-  
-  render(){
+  render() {
     // JSX: chi tra ve 1 phan tu parent
-    return(
+    return (
       <div>
         {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
         {/* <button onClick={this.handleClick}>Click me</button> */}
         <UserInfor></UserInfor>
-        <br/>
-        <br/>
-        <DisplayInfor name="Hoi Dan IT" age="30"></DisplayInfor>
-        <hr/>
-        <DisplayInfor name="IT" age={26}></DisplayInfor>
+        <br />
+        <br />
+        <DisplayInfor listUsers={this.state.listUsers} />
       </div>
-    )
+    );
   }
 }
 
