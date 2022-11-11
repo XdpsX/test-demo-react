@@ -51,9 +51,13 @@ class MyComponent extends React.Component {
   };
 
   render() {
+    const test = { name: "eric", age: 45 };
     // JSX: chi tra ve 1 phan tu parent
     return (
       <>
+        <br />
+        {JSON.stringify(test)}
+        <br />
         <div className="a">
           {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
           {/* <button onClick={this.handleClick}>Click me</button> */}
