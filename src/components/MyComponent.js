@@ -3,7 +3,7 @@
 
 import React from "react";
 import DisplayInfor from "./DisplayInfor";
-import UserInfor from "./UserInfor";
+import AddUserInfor from "./AddUserInfor";
 
 class MyComponent extends React.Component {
   state = {
@@ -38,13 +38,25 @@ class MyComponent extends React.Component {
     console.log(event.pageX);
   }
 
+  handleAddNewUser = (userObj) => {
+    this.setState({
+      listUsers: [userObj, ...this.state.listUsers],
+    });
+
+    // let listUsersNew = this.state.listUsers;
+    // listUsersNew.unshift(userObj);
+    // this.setState({
+    //   listUsers: listUsersNew,
+    // });
+  };
+
   render() {
     // JSX: chi tra ve 1 phan tu parent
     return (
       <div>
         {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
         {/* <button onClick={this.handleClick}>Click me</button> */}
-        <UserInfor></UserInfor>
+        <AddUserInfor handleAddNewUser={this.handleAddNewUser}></AddUserInfor>
         <br />
         <br />
         <DisplayInfor listUsers={this.state.listUsers} />
