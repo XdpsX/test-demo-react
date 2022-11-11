@@ -49,7 +49,13 @@ class MyComponent extends React.Component {
     //   listUsers: listUsersNew,
     // });
   };
-
+  handleDeleteUser = (userId) => {
+    let listUserClone = this.state.listUsers.slice();
+    listUserClone = listUserClone.filter((item) => item.id !== userId);
+    this.setState({
+      listUsers: listUserClone,
+    });
+  };
   render() {
     const test = { name: "eric", age: 45 };
     // JSX: chi tra ve 1 phan tu parent
@@ -64,7 +70,10 @@ class MyComponent extends React.Component {
           <AddUserInfor handleAddNewUser={this.handleAddNewUser}></AddUserInfor>
           <br />
           <br />
-          <DisplayInfor listUsers={this.state.listUsers} />
+          <DisplayInfor
+            listUsers={this.state.listUsers}
+            handleDeleteUser={this.handleDeleteUser}
+          />
         </div>
         <div className="b"></div>
       </>
@@ -73,3 +82,5 @@ class MyComponent extends React.Component {
 }
 
 export default MyComponent;
+
+// Cap nhat props, state -> tu dong goi render
